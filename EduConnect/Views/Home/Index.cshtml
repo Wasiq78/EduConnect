@@ -1,0 +1,135 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/Home.css" />
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                @if (TempData["req submit"] != null)
+                {
+                    <div id="success-alert" class="alert" role="alert" style="background-color: green; width:fit-content; border-radius: 9px; margin-block: 3.5rem 2.5rem; color: white; text-align: center; padding: 0.8rem; transition: opacity 1s ease-out; ">
+                        <span style="font-weight: 700; color: white">Success!</span> @TempData["req submit"]
+                        @* <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> *@
+                    </div>
+                }
+                <h3>Unlock Your Learning Potential</h3>
+                <h1>Find Your Perfect Online Tutor Today!</h1>
+                <p>Welcome to our innovative online tutor hiring platform, where personalized learning meets convenience. Browse through a diverse selection of expert tutors, tailored to your needs, and embark on a transformative educational journey from the comfort of your own home. Get ready to excel with the guidance of dedicated tutors who are here to empower and inspire you.</p>
+                <div class="header-btns">
+                    <a href="@Url.Action("Contact", "Home")" class="btn btn-default">Contact Us</a>
+                    <a href="@Url.Action("Tutor", "Home")" class="btn primary">Hire A Tutor</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="~/Img/header.png" />
+            </div>
+        </div>
+    </header>
+
+    <section class="advantages">
+        <div class="section-header">
+            <h2>Advantages</h2>
+            <p>Why Choose Us</p>
+        </div>
+        <div class="container advantages-container">
+            <div class="advantage">
+                <img src="~/Img/OneOnOneTutoring.svg" />
+
+                <h2>One-on-One Tutoring</h2>
+                <p>No more group studies. Study in a one-to-one interactive environment.</p>
+            </div>
+            <div class="advantage">
+
+                <img src="~/Img/Subjects.svg" />
+
+                <h2>All Grades & Subjects</h2>
+                <p>Tutors from diverse educational background that cater to all grades and subjects.</p>
+            </div>
+            <div class="advantage">
+                <img src="~/Img/choice.svg" />
+                <h2>Tutor of your Choice</h2>
+                <p>Select a teacher of your choice by looking at their academic profiles.</p>
+            </div>
+            <div class="advantage">
+                <img src="~/Img/teachers.svg" />
+                <h2>100+ Tutors</h2>
+                <p>Hundreds of tutors across the globe from all the educational backgrounds.</p>
+            </div>
+            <div class="advantage">
+                <img src="~/Img/trail.svg" />
+                <h2>2 Days Free Trail Class</h2>
+                <p>Have a free of cost demo clas to determine if the tutor fulfills your requirement.</p>
+            </div>
+            <div class="advantage">
+                <img src="~/Img/tutors.svg" />
+                <h2>Male & Female Tutors</h2>
+                <p>Hire a tutor as per your gender preference for any grade and any subject.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tutorial">
+        <div class="section-header">
+            <h2>How to Get an Tutor Online</h2>
+        </div>
+        <div class="container tutorial-contianer">
+            <div class="step">
+                <img src="~/Img/inquiry.svg" />
+                <div class="step-info">
+                    <h1>Submit your inquiry</h1>
+                    <p>
+                        Start by submitting your tuition request for free by filling out the form available on our website. We will make sure to get back to you within a day.
+                    </p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="~/Img/screening.svg" />
+                <div class="step-info">
+                    <h1>Profile Screing</h1>
+                    <p> Our staff quickly starts matching and filtering the thousands of verified profiles on our tutoring platform. We then send you the most relevant tutor profiles according to your requirements.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="~/Img/choose.svg" />
+                <div class="step-info">
+                    <h1>Choose your Tutor</h1>
+                    <p> We have efficient A level home tutors and online A level courses teachers. You can shortlist two to three teachers following your preferences (subject, class, tutoring experience, fee, place, and timing).</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="~/Img/freedom.svg" />
+                <div class="step-info">
+                    <h1>Freedom Tutoring Seesion</h1>
+                    <p> Caring for your ease and satisfaction in deciding the best-fit tutor, we always organize a 2-day free trial session.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="~/Img/learning.svg" />
+                <div class="step-info">
+                    <h1>Get on board to start​ learning</h1>
+                    <p>After the successful trial, you can confirm the tutor. Also, discuss with the teacher and agree on the specifications. Pay the fee to start learning with the experts on your schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        setTimeout(function () {
+            var alertElement = document.getElementById('success-alert');
+            if (alertElement) {
+                alertElement.style.opacity = '0';
+                setTimeout(function () {
+                    alertElement.remove();
+                }, 1000); 
+            }
+        }, 2000); 
+    </script>
+</body>
+</html>

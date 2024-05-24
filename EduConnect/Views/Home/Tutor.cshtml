@@ -1,0 +1,191 @@
+﻿
+<head>
+    <link rel="stylesheet" href="~/css/Tutor.css" />
+
+</head>
+
+<div class="breadcrumb">
+    <div class="container bread-container">
+        <h1>Tutors</h1>
+        <p>Home / Tutors</p>
+    </div>
+</div>
+
+<section class="tutors">
+    <div class="section-header">
+        <h2>Tutors</h2>
+        <p>Hire A Tutor Of Your Own Choice</p>
+    </div>
+    <div class="search container">
+        <h2>Select the Subject for which you need Tutor</h2>
+        <div class="search-bar">
+            <select id="selectSubject" class="form-select" aria-label="Default select example" style="width:80%;height:7vh;">
+                <option selected>select menu</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="English">English</option>
+                <option value="Urdu">Urdu</option>
+
+
+            </select>
+            <button type="button" class="btn btn-outline-dark" onclick="select()">Select</button>
+            @* <button class="btn primary sm">SEARCH</button> *@
+            @* <input type="text" name="Subject" placeholder="Enter Subject Name" />
+            <button class="btn primary sm">SEARCH</button> *@
+        </div>
+    </div>
+    <div class="container tutors-container" id="tutorList">
+        <div class="tutor">
+            <img src="~/Img/avatar3.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Ali Ahamd (Phd Physics)</h2>
+                <span>PHY-3189</span>
+                <p>Ali Ahmad is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+            </div>
+        </div>
+        <div class="tutor">
+            <img src="~/Img/avatar4.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Maria Khan (Phd Chemistry)</h2>
+                <span>CHY-5402</span>
+                <p>Maria Khan is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+            </div>
+        </div>
+        <div class="tutor">
+            <img src="~/Img/avatar8.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Faisal Kareem (BS Mathematics)</h2>
+                <span>MAT-9037</span>
+                <p>Faisal Kareem is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm" >Hire</a>
+            </div>
+        </div>
+        <div class="tutor">
+            <img src="~/Img/avatar9.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Hira Akram (English Literature)</h2>
+                <span>ENG-8754</span>
+                <p>Hira Akram is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+            </div>
+        </div>
+        <div class="tutor">
+            <img src="~/Img/avatar11.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Aqib Aslam (M.Phil Urdu)</h2>
+                <span>UR-6732</span>
+                <p>Aqib Aslam is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+            </div>
+        </div>
+        <div class="tutor">
+            <img src="~/Img/me-about.jpg" class="tutor-img" />
+            <div class="tutor-description">
+                <h2>Aaila Irfan (BSCS)</h2>
+                <span>CS-4763</span>
+                <p>Aaila Irfan is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function select(){
+    var subject = document.getElementById("selectSubject").value;
+    console.log(subject);
+        var tutorContent;
+        if (subject=="Physics"){
+             tutorContent = `<div class="tutor" style="">
+                <img src="/Img/avatar3.jpg" class="tutor-img" />
+                <div class="tutor-description" >
+                    <h2>Ali Ahamd (Phd Physics)</h2>
+                    <span>PHY-3189</span>
+                    <p>Ali Ahmad is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>
+                </div>`;
+
+            document.getElementById("tutorList").innerHTML = tutorContent;
+            
+
+        }
+        else if (subject == "Chemistry") {
+            tutorContent = `  <div class="tutor">
+                <img src="/Img/avatar4.jpg" class="tutor-img" />
+                <div class="tutor-description">
+                    <h2>Maria Khan (Phd Chemistry)</h2>
+                    <span>CHY-5402</span>
+                    <p>Maria Khan is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>
+            </div>`
+            document.getElementById("tutorList").innerHTML = tutorContent;
+
+        
+        }
+        else if (subject == "Computer Science") {
+            tutorContent = `  <div class="tutor">
+                <img src="/Img/me-about.jpg" class="tutor-img" />
+                <div class="tutor-description">
+                    <h2>Aaila Irfan (BSCS)</h2>
+                    <span>CS-4763</span>
+                    <p>Aaila Irfan is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>
+            </div>`
+                document.getElementById("tutorList").innerHTML = tutorContent;
+
+
+        }
+        else if (subject == "English") {
+            tutorContent = `<div class="tutor">
+                <img src="/Img/avatar9.jpg" class="tutor-img" />
+                <div class="tutor-description">
+                    <h2>Hira Akram (English Literature)</h2>
+                    <span>ENG-8754</span>
+                    <p>Hira Akram is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>`
+                document.getElementById("tutorList").innerHTML = tutorContent;
+
+
+        }
+        else if (subject == "Mathematics") {
+            tutorContent = `  <div class="tutor">
+                <img src="/Img/avatar8.jpg" class="tutor-img" />
+                <div class="tutor-description">
+                    <h2>Faisal Kareem (BS Mathematics)</h2>
+                    <span>MAT-9037</span>
+                    <p>Faisal Kareem is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>
+            </div>`
+                document.getElementById("tutorList").innerHTML = tutorContent;
+
+
+        }
+        else if (subject == "Urdu") {
+            tutorContent = `   <div class="tutor">
+                <img src="/Img/avatar11.jpg" class="tutor-img" />
+                <div class="tutor-description">
+                    <h2>Aqib Aslam (M.Phil Urdu)</h2>
+                    <span>UR-6732</span>
+                    <p>Aqib Aslam is a passionate tutor committed to empowering learners with tailored instruction, fostering confidence, and igniting a love for learning.</p>
+                    <a href="@Url.Action("Hire", "Home")" class="btn primary sm">Hire</a>
+                </div>
+            </div>`
+                document.getElementById("tutorList").innerHTML = tutorContent;
+
+
+        }
+
+    }
+
+
+
+
+</script>

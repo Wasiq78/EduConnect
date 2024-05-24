@@ -1,0 +1,63 @@
+﻿@model EduConnect.Models.RequestTable;
+
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Contact.css" />
+</head>
+
+<div class="breadcrumb">
+    <div class="container bread-container">
+        <h1>Contact</h1>
+        <p>Home / Contact</p>
+    </div>
+</div>
+
+<section id="contact">
+    <div class="container contact-container">
+        <div class="contact-left">
+            <h1>Need additional information?</h1>
+            <p>
+                Have questions or need assistance? We're here to help! Reach out to our dedicated support team for personalized assistance and prompt resolution of any queries you may have. Our friendly representatives are available 24 hours to assist you. We value your feedback and are committed to providing exceptional service to our valued customers. Don't hesitate to get in touch – we look forward to hearing from you!
+            </p>
+            <div class="contact-info">
+                <div class="contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(123) -456-789</span>
+                </div>
+                <div class="contact">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>educonnect@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <form asp-controller="Home"asp-action="Contact" method="post">
+                <div class="form-group">
+                    <label for="name">Name <span>*</span></label>
+                    <input type="text" asp-for="Name" placeholder="E.g: Jone Doe">
+                    <span asp-validation-for="Name" style="color:red;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" asp-for="Email" placeholder="youremail@example.com">
+                    <span asp-validation-for="Email" style="color:red;"></span>
+
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about it <span>*</span></label>
+                    <textarea asp-for="Request" rows="7" placeholder="Write here ..."></textarea>
+                    <span asp-validation-for="Request" style="color:red;"></span>
+
+                </div>
+                <div class="contact-btn">
+                    <button class="btn"><i class="fa-regular fa-envelope"></i> Send Request</button>
+                </div>
+            </form>
+            @ViewBag.result
+        </div>
+    </div>
+</section>

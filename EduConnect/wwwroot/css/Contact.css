@@ -1,0 +1,50 @@
+﻿.contact-container{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 10%;
+}
+
+.contact-left h1{
+    font-size: 1.8rem
+}
+
+.contact-left p{
+    color: var(--color-gray-600);
+    margin-block: 1rem 1.4rem;
+}
+
+.contact-info{
+    flex-direction: column;
+    gap: 1rem;
+    display: flex;
+}
+
+.contact{
+    gap: 1rem;
+    display: flex
+}
+
+.contact-right form{
+    display: flex;
+    flex-direction:column;
+    gap: 1.5rem;
+}
+
+.form-group label{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.form-group label span{
+    color: var(--color-primary)
+}
+
+.contact-btn button {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.contact-btn button i {
+    margin-right: 8px;
+}
